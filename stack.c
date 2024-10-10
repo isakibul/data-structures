@@ -35,7 +35,8 @@ int isempty(st *s) {
 // add elements into stack
 void push(st *s, int newItem) {
   if (isfull(s)) {
-    printf("STACK FULL");
+    printf("Stack is full");
+    printf("\n");
   } else {
     s->top++;
     s->items[s->top] = newItem;
@@ -46,9 +47,9 @@ void push(st *s, int newItem) {
 // remove element from stack
 void pop(st *s) {
   if (isempty(s)) {
-    printf("\n STACK EMPTY \n");
+    printf("\n Stack is empty \n");
   } else {
-    printf("Item popped= %d", s->items[s->top]);
+    printf("Item popped = %d", s->items[s->top]);
     s->top--;
   }
   count--;
@@ -66,15 +67,20 @@ void printStack(st *s) {
 
 // driver code
 int main() {
-  int ch;
-  st *s = (st *)malloc(sizeof(st));
+  st *s = malloc(sizeof(st));
 
   createEmptyStack(s);
 
   push(s, 1);
   push(s, 2);
   push(s, 3);
-  push(s, 4);
+  push(s, 5);
+  push(s, 6);
+  push(s, 7);
+  push(s, 8);
+  push(s, 9);
+  push(s, 10);
+  push(s, 11);
 
   printStack(s);
 
