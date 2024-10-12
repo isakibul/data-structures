@@ -1,72 +1,74 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include<stdio.h>
+#include<stdlib.h>
 
 #define MAX 10
 
 int count = 0;
 
-// creating a stack
-struct stack {
+// create a stack
+struct stack{
   int items[MAX];
   int top;
 };
 typedef struct stack st;
 
-void createEmptyStack(st *s) {
+// create an empty stack
+void createEmptyStack(st *s){
   s->top = -1;
 }
 
-// check if the stack is full
-int isfull(st *s) {
-  if (s->top == MAX - 1)
+// check if stack is full
+int isFull(st *s){
+  if(s->top == MAX-1){
     return 1;
-  else
+  }else{
     return 0;
+  }
+};
+
+// check if stack is empty
+int isEmpty(st *s){
+  if(s->top == -1){
+    return 1;
+  }else{
+    return 0;
+  }
 }
 
-// check if the stack is empty
-int isempty(st *s) {
-  if (s->top == -1)
-    return 1;
-  else
-    return 0;
-}
-
-// add elements into stack
-void push(st *s, int newItem) {
-  if (isfull(s)) {
+// add element to the stack
+void push(st *s, int newItems){
+  if(isFull(s)){
     printf("Stack is full");
     printf("\n");
-  } else {
+  }else{
     s->top++;
-    s->items[s->top] = newItem;
+    s->items[s->top] = newItems;
   }
   count++;
 }
 
-// remove element from stack
-void pop(st *s) {
-  if (isempty(s)) {
-    printf("\n Stack is empty \n");
-  } else {
+// remove element from the stack
+void pop(st *s){
+  if(isEmpty(s)){
+    printf("Stack is empty");
+    printf("\n");
+  }else{
     printf("Item popped = %d", s->items[s->top]);
     s->top--;
   }
   count--;
-  printf("\n");
 }
 
-// print elements of stack
-void printStack(st *s) {
+// print element of the stack
+void printStack(st *s){
   printf("Stack: ");
-  for (int i = 0; i < count; i++) {
+  for(int i=0; i<count; i++){
     printf("%d ", s->items[i]);
   }
   printf("\n");
 }
 
-// driver code
-int main() {
+int main(){
   st *s = malloc(sizeof(st));
 
   createEmptyStack(s);
@@ -74,13 +76,13 @@ int main() {
   push(s, 1);
   push(s, 2);
   push(s, 3);
+  push(s, 4);
   push(s, 5);
   push(s, 6);
   push(s, 7);
   push(s, 8);
   push(s, 9);
   push(s, 10);
-  push(s, 11);
 
   printStack(s);
 
