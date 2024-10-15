@@ -87,6 +87,7 @@ int main(){
   printStack(s);
 
   pop(s);
+  pop(s);
 
   printf("\nAfter popping out\n");
   printStack(s);
