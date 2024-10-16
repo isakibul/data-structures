@@ -23,8 +23,8 @@ void deQueue(){
     if(front == -1){
         printf("Queue is empty\n");
     }else{
-        front++;
         printf("Deleted %d\n", items[front]);
+        front++;
         if(front>rear){
             front=rear=-1;
         }
@@ -55,6 +55,7 @@ int main(){
 
     enQueue(6);
 
+    deQueue();
     deQueue();
 
     display();
