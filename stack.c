@@ -6,11 +6,10 @@
 int count = 0;
 
 // create a stack
-struct stack{
+typedef struct{
   int items[MAX];
   int top;
-};
-typedef struct stack st;
+} st;
 
 // create an empty stack
 void createEmptyStack(st *s){
@@ -91,4 +90,8 @@ int main(){
 
   printf("\nAfter popping out\n");
   printStack(s);
+
+  free(s);
+
+  return 0;
 }
