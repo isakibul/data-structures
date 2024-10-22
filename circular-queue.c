@@ -38,13 +38,14 @@ void enQueue(int element) {
 }
 
 // removing an element
-int deQueue() {
+void deQueue() {
   int element;
   if (isEmpty()) {
     printf("\n Queue is empty !! \n");
-    return (-1);
+    return;
   } else {
     element = items[front];
+
     if (front == rear) {
       front = -1;
       rear = -1;
@@ -52,8 +53,8 @@ int deQueue() {
     else {
       front = (front + 1) % SIZE;
     }
+
     printf("\n Deleted element -> %d \n", element);
-    return (element);
   }
 }
 
@@ -65,10 +66,13 @@ void display() {
   else {
     printf("\n Front -> %d ", front);
     printf("\n Items -> ");
-    for (i = front; i != rear; i = (i + 1) % SIZE) {
+
+    i = front;
+    do {
       printf("%d ", items[i]);
-    }
-    printf("%d ", items[i]);
+      i = (i + 1) % SIZE;
+    } while (i != (rear + 1) % SIZE);
+    
     printf("\n Rear -> %d \n", rear);
   }
 }

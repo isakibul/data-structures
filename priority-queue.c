@@ -36,16 +36,12 @@ void heapify(int array[], int size, int i) {
 
 // function to insert an element into the tree
 void insert(int array[], int newNum) {
-  if (size == 0) {
-    array[0] = newNum;
-    size += 1;
-  } else {
     array[size] = newNum;
     size += 1;
+    
     for (int i = size / 2 - 1; i >= 0; i--) {
       heapify(array, size, i);
     }
-  }
 }
 
 // function to delete an element from the tree
