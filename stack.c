@@ -23,7 +23,7 @@ int isFull(st *s){
   }else{
     return 0;
   }
-};
+}
 
 // check if stack is empty
 int isEmpty(st *s){
