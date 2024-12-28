@@ -35,13 +35,13 @@ int isEmpty(st *s){
 }
 
 // add element to the stack
-void push(st *s, int newItems){
+void push(st *s, int newItem){
   if(isFull(s)){
     printf("Stack is full");
     printf("\n");
   }else{
     s->top++;
-    s->items[s->top] = newItems;
+    s->items[s->top] = newItem;
   }
   count++;
 }
