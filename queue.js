@@ -53,7 +53,9 @@ class Queue {
   }
 }
 
-// Example usage
+/**
+ * Example usage
+ */
 const queue = new Queue();
 queue.deQueue();
 
